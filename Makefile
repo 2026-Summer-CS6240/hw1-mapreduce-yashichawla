@@ -8,6 +8,7 @@ jar.path=target/${jar.name}
 job.name=wc.WordCount
 local.input=input
 local.output=outputAWS
+local.log=logAWS
 # Pseudo-Cluster Execution
 hdfs.user.name=joe
 hdfs.input=input
@@ -127,6 +128,7 @@ aws: jar upload-app-aws delete-output-aws
 download-output-aws: clean-local-output
 	mkdir ${local.output}
 	aws s3 sync s3://${aws.bucket.name}/${aws.output} ${local.output}
+	aws s3 sync s3://${aws.bucket.name}/${aws.log.dir} ${local.log}
 
 # Change to standalone mode.
 switch-standalone:
