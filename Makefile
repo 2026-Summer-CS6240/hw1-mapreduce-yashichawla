@@ -7,7 +7,7 @@ jar.name=mr-demo-1.0.jar
 jar.path=target/${jar.name}
 job.name=wc.WordCount
 local.input=input
-local.output=output
+local.output=outputLocal
 # Pseudo-Cluster Execution
 hdfs.user.name=joe
 hdfs.input=input
